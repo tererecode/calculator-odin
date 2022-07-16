@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+
+.calc-container {
+    height: 600px;
+    width: 400px;
+    background-color: lightblue;
+    margin: auto;
+    border-radius: 16px;
+}
+
+.calc-display {
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    text-align: right;
+    display: inline-block;
+    margin: 20px 10px 10px 10px;
+    height: 50px;
+    width: 380px;
+    padding: 5px;
+    background-color: whitesmoke;
+    border-radius: 16px;
+
+}
+
+.calc-btns-operator-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: lightcyan;
+    height: 20%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 16px;
+
+}
+
+.calc-btn-operator {
+
+    font-size: 21px;
+    text-align: center;
+    border: 2px solid black;
+    flex: 1;
+    margin: 2px;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.calc-btns-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: lightcoral;
+    height: 60%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 16px;
+
+}
+
+
+.calc-btns-num {
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+    font-size: 32px;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 10px;
+    width: 30%;
+    margin: auto;
+
+}
