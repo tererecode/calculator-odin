@@ -70,10 +70,10 @@ body {
 
 .calc-btns-control {
     display: flex;
+    width: 100%;
 }
 
-.calc-btn-clear,
-.calc-btn-back {
+.calc-btns-control>* {
     font-size: 21px;
     text-align: center;
     border: 2px solid black;
