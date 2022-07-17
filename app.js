@@ -17,7 +17,7 @@ clearBtn.addEventListener('click', clearCalc)
 function populateDisplay(event) {
     userInput += event.target.textContent
     calcDisplay.textContent = userInput
-    console.log('User pressed ', event.target.textContent, 'userInput val ', userInput)
+    console.log('user pressed ', event.target.textContent, 'userInput val ', userInput)
 }
 
 function nextUserInput(event) {
@@ -29,16 +29,23 @@ function nextUserInput(event) {
         previousInput = userInput
         userInput = ''
         console.log('operator is ', calledOperator, 'previous is', previousInput)
+    } else {
+        calculate()
+        calledOperator = event.target.textContent
+        console.log('operator is ', calledOperator, 'previous is', previousInput, 'input is ', userInput)
+
     }
 }
 
 function calculate() {
+    if (userInput == '' || calledOperator == undefined || previousInput == undefined) return;
     lastResult = operate(calledOperator, Number(previousInput), Number(userInput))
     console.log('result is ', lastResult)
     calcDisplay.textContent = lastResult
     previousInput = lastResult
     userInput = ''
     calledOperator = undefined;
+
 
 }
 
