@@ -1,5 +1,6 @@
 const calcDisplay = document.getElementById('display');
 const clearBtn = document.getElementById('clear-btn');
+const backBtn = document.getElementById('back-btn');
 const calculateBtn = document.getElementById('equals-btn');
 const numBtns = document.querySelectorAll('.calc-btns-num');
 const operatorBtns = document.querySelectorAll('.calc-btn-operator');
@@ -13,6 +14,7 @@ numBtns.forEach(num => num.addEventListener('click', populateDisplay))
 operatorBtns.forEach(operator => operator.addEventListener('click', nextUserInput))
 calculateBtn.addEventListener('click', calculate)
 clearBtn.addEventListener('click', clearCalc)
+backBtn.addEventListener('click', sliceInput)
 
 function populateDisplay(event) {
     userInput += event.target.textContent
@@ -63,7 +65,7 @@ function multiply(a, b) {
 
 function divide(a, b) {
     if (b === 0) {
-        alert('Oops! don\'t break the universe!');
+        alert('Oops! please don\'t break the universe!');
         clearCalc();
     } else {
         return a / b
@@ -95,4 +97,11 @@ function clearCalc() {
     lastResult = undefined;
     calcDisplay.textContent = '0';
 
+}
+
+function sliceInput() {
+    if (userInput == '') return;
+    userInput = userInput.slice(0, -1);
+    console.log('user removed last input', userInput);
+    calcDisplay.textContent = userInput;
 }
