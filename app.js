@@ -16,6 +16,18 @@ calculateBtn.addEventListener('click', calculate)
 clearBtn.addEventListener('click', clearCalc)
 backBtn.addEventListener('click', sliceInput)
 
+window.addEventListener('keydown', (e) => {
+    let pressedKey = e.key;
+    if (pressedKey == "Enter")
+        pressedKey = "=";
+    console.log('user pressed ', pressedKey);
+    const keyBtn = document.querySelector(`.key[data-key="${pressedKey}"`);
+    if (!keyBtn)
+        return;
+    console.log(keyBtn);
+    keyBtn.click();
+})
+
 function populateDisplay(event) {
     userInput += event.target.textContent
     calcDisplay.textContent = userInput
